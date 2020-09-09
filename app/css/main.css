@@ -110,7 +110,6 @@
 
 .search .search-btn:hover {
     background-color: rgb(8 20 29 / 0.8);;
-    font-size: 19px;
 }
 
 .primary {
@@ -307,7 +306,6 @@ hr {
     
     .search .search-btn:hover {
         background-color: rgb(6 60 81 / 0.7);
-        font-size: 19px;
     }
 
     .primary {
