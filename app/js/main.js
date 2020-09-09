@@ -3,6 +3,7 @@ let searchBtn = document.querySelector('.search-btn');
 
 let displayBlock = document.querySelector('#display');
 let displayName = document.querySelector('.name');
+let displayLatLon = document.querySelector('.lat-lon');
 let displayTemperature = document.querySelector('.temperature');
 let displayWeather = document.querySelector('.weather');
 let displayWeatherIcon = document.querySelector('.weather-icon');
@@ -13,15 +14,15 @@ let displayWind = document.querySelector('.wind');
 
 const kelvinToCelcius = (tempInKelvin) => {
     return Math.ceil(tempInKelvin - 273.15);
-}
+};
 
 const convertToKmPerHr = (metersPerSecond) => {
     return Math.ceil((metersPerSecond * 3600) / 1000);
-}
+};
 
 const errorMsg = (err) => {
     console.log(err);
-}
+};
 
 const responseToJSON = (response) => {
     if(response.ok) {
@@ -29,10 +30,10 @@ const responseToJSON = (response) => {
     } else {
         return 'Something went wrong';
     }    
-}
+};
 
 const getWeatherIcon = (iconName) => {
-    const iconURL = `http://openweathermap.org/img/wn/${iconName}@2x.png`;
+    const iconURL = `https://openweathermap.org/img/wn/${iconName}@2x.png`;
 
     fetch(iconURL)
         .then((response) => {
@@ -47,8 +48,8 @@ const getWeatherIcon = (iconName) => {
             displayWeatherIcon.alt = "Icon for the weather";
             displayWeatherIcon.style.display = "block";
         })
-        .catch(errorMsg)
-}
+        .catch(errorMsg);
+};
 
 const isolateData = (response) => {
     console.log('In isolateData function.', response);
@@ -62,14 +63,17 @@ const isolateData = (response) => {
         weather: response.weather[0].description,
         weatherIcon: response.weather[0].icon,
         windSpeed: response.wind.speed,
-        humidity: response.main.humidity
+        humidity: response.main.humidity,
+        lat: response.coord.lat,
+        lon: response.coord.lon
     }
-}
+};
 
 const displayData = (data) => {
     console.log('In displayData function.', data);
 
     displayName.innerHTML = data.name;
+    displayLatLon.innerHTML = `${data.lat}, ${data.lon}`;
     displayTemperature.innerHTML = `${kelvinToCelcius(data.temp)}°C`;
     displayWeather.innerHTML = data.weather;
     displayMaxTemp.innerHTML = `${kelvinToCelcius(data.maxTemp)}°C`;
@@ -78,7 +82,7 @@ const displayData = (data) => {
     displayWind.innerHTML = `${convertToKmPerHr(data.windSpeed)}km/s`;
 
     getWeatherIcon(data.weatherIcon);
-}
+};
 
 const search = () => {
     const apiKey = 'f2f2829064e0603eca60536a2a902b48';
@@ -89,7 +93,7 @@ const search = () => {
         .then(responseToJSON)
         .then(isolateData)
         .then(displayData)
-        .catch(errorMsg)
+        .catch(errorMsg);
 }
 
 searchBtn.addEventListener('click', () => {
@@ -98,4 +102,4 @@ searchBtn.addEventListener('click', () => {
 
 window.onload = (event) => {
     search();
-}
+};
