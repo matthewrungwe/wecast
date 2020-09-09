@@ -23,25 +23,12 @@
     color: grey;
 } */
 
-.banner {
-    height: 100vh;
-    background-image: url('../../assets/images/bg/dark-sunset-cloud-by-tom-barrett.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.overlay{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(51, 51, 51, 0.2);
-}
 /* Header end */
 
 /* Main */
 .display-wrap {
     display: flex;
-    background-image: url('../../assets/images/bg/dark-sunset-cloud-by-tom-barrett.jpg');
+    background-image: url('../../assets/images/bg/dark-sunset-cloud-by-tom-barrett.webp');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -257,7 +244,7 @@ hr {
     }
 
     .display-wrap #display-primary {
-        background-image: url('../../assets/images/bg/dark-sunset-cloud-by-tom-barrett.jpg');
+        background-image: url('../../assets/images/bg/dark-sunset-cloud-by-tom-barrett.webp');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
