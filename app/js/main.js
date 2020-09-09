@@ -79,7 +79,7 @@ const displayData = (data) => {
     displayMaxTemp.innerHTML = `${kelvinToCelcius(data.maxTemp)}°C`;
     displayMinTemp.innerHTML = `${kelvinToCelcius(data.minTemp)}°C`;
     displayHumidity.innerHTML = `${data.humidity}%`
-    displayWind.innerHTML = `${convertToKmPerHr(data.windSpeed)}km/s`;
+    displayWind.innerHTML = `${convertToKmPerHr(data.windSpeed)}km/hr`;
 
     getWeatherIcon(data.weatherIcon);
 };
