@@ -79,6 +79,10 @@
     /* border: 1px solid orange; */
 }
 
+.search label {
+    opacity: 0;
+}
+
 .search input {
     width: 100%;
     height: 50px;
