@@ -1,19 +1,22 @@
-/* * {
+* {
     padding: 0;
     margin: 0;
-} */
+}
 
 /* Header */
 .navbar {
     position: absolute;
     top: 0;
     width: 100%;
+    margin: 5px 5px 0 5px;
 }
 
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: 600;
-    /* color: gray; */
+    color: white;
+    padding-left: 10px;
+    text-decoration: none;
 }
 
 /* .navbar-brand span {
@@ -128,9 +131,9 @@
 .primary {
     display: flex;
     position: relative;
-    top: 40%;
+    top: 35%;
     width: 75%;
-    height: 20vh;
+    height: 25vh;
     margin: 0 auto;
     /* border: 1px solid orange; */
     background-color: rgb(6 60 81 / 0.5);;
