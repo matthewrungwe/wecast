@@ -60,12 +60,7 @@
     color: white;
 }
 
-.heading h1:hover {
-    font-size:3.5rem;
-    transition: 3s;
-}
-
- .heading span{
+.heading span{
     display: block;
     font-weight: 700;
     /* color: orangered */
@@ -226,16 +221,6 @@ hr {
         font-weight: 600;
         /* color: gray; */
     }
-
-    .banner .heading {
-        position: relative;
-        top: 25%;
-        left: 100px;
-    }
-
-    .banner .heading h1 {
-        font-size: 4rem;
-    }
         
     /* Header end */
 
@@ -278,11 +263,6 @@ hr {
         text-align: center;
     }
     
-    .heading h1:hover {
-        font-size: 2rem;
-        /* transition: 3s; */
-    }
-    
      .heading span{
         display: block;
         font-weight: 600;
@@ -306,7 +286,6 @@ hr {
         border: none;
         border-radius: 10px;
         padding:0 10px;
-        /* outline: unset; */
         /* border: 1px solid red; */
     }
     
