@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A weather web application">
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+    <title>Weather App</title>
+
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- Personal Styles -->
+    <link rel="stylesheet" href="./app/css/main.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <a class="navbar-brand" href="#"><span>We</span>Cast</a>
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+              </ul>
+            </div> -->
+          </nav>
+    </header>
+
+    <!-- Main -->
+    <main id="main">
+      <div class="display-wrap">
+        <section id="display-primary">
+          <div class="heading">
+            <h1><span>Weather</span> Forcast</h1>
+          </div>
+
+          <div class="search">
+            <label for="city"></label>
+              <input type="search" name="city" id="city" placeholder="Enter your city" autofocus>
+              <button type="submit" class="search-btn">Search</button>
+          </div>
+
+          <div class="primary">
+            <div class="block-weather">
+              <div class="weather-icon-wrap">
+                <img class="weather-icon" src="" alt="">
+              </div>
+              <p class="weather"></p>
+            </div>
+            <div class="block-loc-time">
+              <p class="name"></p>
+            </div>
+            <div class="block-temp">
+              <p class="temperature"></p>
+            </div>
+          </div>
+        </section>
+
+        <section id="display-secondary">
+          <div class="secondary">
+            <div class="more-details">
+              <h2>Weather Details</h2>
+              <ul>
+                <li>
+                  <span class="detail-name">Max Temp</span>
+                  <span class="detail-value max-temp">28</span>
+                </li>
+                <li>
+                  <span class="detail-name">Min Temp</span>
+                  <span class="detail-value min-temp">14</span>
+                </li>
+                <li>
+                  <span class="detail-name">Humidity</span>
+                  <span class="detail-value humidity">65%</span>
+                </li>
+                <li>
+                  <span class="detail-name">Wind</span>
+                  <span class="detail-value wind">15km/hr</span>
+                </li>
+              </ul>
+            </div>
+            <hr>
+            <!-- <div class="next-days">
+              <h2>Next Days</h2>
+              <ol>
+                <li>Day 1</li>
+                <li>Day 2</li>
+                <li>Day 3</li>
+                <li>Day 4</li>
+                <li>Day 5</li>
+                <li>Day 6</li>
+                <li>Day 7</li>
+              </ol>
+            </div> -->
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <!-- <footer>
+
+    </footer> -->
+    
+
+    <!-- Vendor Scripts -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Personal Scripts -->
+    <script src="./app/js/main.js"></script>
+    <script>
+      // Script to register the service worker goes here
+      // if ('serviceWorker' in navigator) {
+      //           window.addEventListener('load', () => {
+      //               navigator.serviceWorker.register('service-worker.js')
+      //                   .then(registration => {
+      //                       console.log('Service Worker is registered', registration);
+      //                   })
+      //                   .catch(err => {
+      //                       console.error('Registration failed:', err);
+      //                   });
+      //           });
+      //       }
+    </script>
+</body>
+</html>

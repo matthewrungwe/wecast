@@ -1,0 +1,17 @@
+{
+  "name": "weather-forcast",
+  "version": "1.0.0",
+  "description": "WeCast is a web base weather forcast application. WeCast is a OpenWeatherMap API powered web application.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Matthew Rungwe",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1"
+  }
+}

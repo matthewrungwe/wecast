@@ -1,0 +1,380 @@
+/* * {
+    padding: 0;
+    margin: 0;
+} */
+
+/* Header */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    /* color: gray; */
+}
+
+/* .navbar-brand span {
+    color: grey;
+} */
+
+.banner {
+    height: 100vh;
+    background-image: url('../../assets/images/bg/dark-sunset-cloud-by-tom-barrett.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.2);
+}
+/* Header end */
+
+/* Main */
+.display-wrap {
+    display: flex;
+    background-image: url('../../assets/images/bg/dark-sunset-cloud-by-tom-barrett.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#display-primary {
+    flex: 1.5;
+    height: 100vh;
+}
+
+#display-secondary {
+    flex: 1;
+    height: 100vh;
+    background-color: rgb(6 60 81 / 0.5);
+    /* overflow: scroll; */
+}
+
+/* Primary display section */
+.heading {
+    position: relative;
+    top: 20%;
+    left: 50px;
+    width: fit-content;
+    /* border: 1px solid orange; */
+}
+
+.heading h1 {
+    font-size:3rem;
+    color: white;
+}
+
+.heading h1:hover {
+    font-size:3.5rem;
+    transition: 3s;
+}
+
+ .heading span{
+    display: block;
+    font-weight: 700;
+    /* color: orangered */
+}
+
+.search {
+    position: relative;
+    top: 20%;
+    width: 300px;
+    margin: 0 auto;
+    /* border: 1px solid orange; */
+}
+
+.search input {
+    width: 100%;
+    height: 50px;
+    font-size: 17px;
+    color: #fff;
+    background-color: rgb(6 60 81 / 0.5);
+    border: none;
+    border-radius: 10px;
+    padding:0 10px;
+    /* outline: unset; */
+    /* border: 1px solid red; */
+}
+
+.search a {
+    text-decoration: none;
+}
+
+.search .search-btn {
+    display: block;
+    width: 100px;
+    height: 50px;
+    margin: 15px auto;
+    font-size: 17px;
+    color: #fff;
+    background-color: rgb(6 60 81 / 0.5);
+    border-radius: 10px;
+    border: none;
+    /* border: 1px solid red; */
+}
+
+.search .search-btn:hover {
+    background-color: rgb(8 20 29 / 0.8);;
+    font-size: 19px;
+    transition: 1.5s;
+}
+
+.primary {
+    display: flex;
+    position: relative;
+    top: 40%;
+    width: 75%;
+    height: 20vh;
+    margin: 0 auto;
+    /* border: 1px solid orange; */
+    background-color: rgb(6 60 81 / 0.5);;
+}
+
+.primary .block-weather,
+.primary .block-loc-time,
+.primary .block-temp {
+    flex: 1;
+    color: rgb(255, 255, 255);
+    /* border: 1px solid teal; */
+}
+
+.primary .block-weather .weather-icon-wrap {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.primary .block-weather .weather-icon-wrap img {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.primary .block-weather p {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+
+.primary .block-loc-time p {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.primary .block-temp p {
+    text-align: center;
+    font-size: 6rem;
+    font-weight: 600;
+}
+/* Primary display section end */
+
+/* Secondary display section */
+.secondary {
+    width: 80%;
+    margin: 0 auto;
+    /* border: 1px solid white; */
+}
+
+.secondary .more-details {
+    margin: 50px 0 30px 0;
+    /* border: 1px Solid red; */
+}
+
+.secondary h2 {
+    color: white;
+    font-size: 1.5rem;
+    /* border: 1px solid red; */
+    margin-bottom: 30px;
+}
+
+hr {
+    border-color: white;
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* .secondary .more-details ul {
+    border: 1px solid orange;
+} */
+
+.secondary .more-details li {
+    color: white;
+    height: 60px;
+    margin: 10px 0;
+    margin-left: -30px;
+    list-style-type: none;
+    /* border: 1px solid green; */
+}
+
+.secondary .more-details li .detail-name {
+    float: left;
+}
+
+.secondary .more-details li .detail-value {
+    float: right;
+}
+/* Secondary display section end */
+
+/* Main end */
+
+
+@media screen and (max-width: 992px) {
+    /* Header */
+    .navbar-brand {
+        font-size: 2rem;
+        font-weight: 600;
+        /* color: gray; */
+    }
+
+    .banner .heading {
+        position: relative;
+        top: 25%;
+        left: 100px;
+    }
+
+    .banner .heading h1 {
+        font-size: 4rem;
+    }
+        
+    /* Header end */
+
+    /* Main */
+    .display-wrap {
+        display: flex;
+        flex-flow: column;
+        height: fit-content;
+        background: #333;
+    }
+
+    .display-wrap #display-primary {
+        background-image: url('../../assets/images/bg/dark-sunset-cloud-by-tom-barrett.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 20vh;
+        padding-bottom: 55%;
+    }
+
+    .display-wrap #display-secondary {
+        height: 20vh;
+        padding-bottom: 55%;
+    }
+    /* Main end */
+
+    /* Primary display section */
+    .heading {
+        position: unset;
+        width: fit-content;
+        margin: 0 auto;
+        margin-top: 70px;
+        /* border: 1px solid orange; */
+    }
+    
+    .heading h1 {
+        color: white;
+        font-size: 2.5rem;
+        font-weight: 400;
+        text-align: center;
+    }
+    
+    .heading h1:hover {
+        font-size: 2rem;
+        /* transition: 3s; */
+    }
+    
+     .heading span{
+        display: block;
+        font-weight: 600;
+        /* color: orangered */
+    }
+
+    .search {
+        position: relative;
+        top: 5%;
+        width: 300px;
+        margin: 0 auto;
+        /* border: 1px solid orange; */
+    }
+    
+    .search input {
+        width: 100%;
+        height: 50px;
+        font-size: 17px;
+        color: white;
+        background-color: rgb(6 60 81 / 0.5);
+        border: none;
+        border-radius: 10px;
+        padding:0 10px;
+        /* outline: unset; */
+        /* border: 1px solid red; */
+    }
+    
+    .search a {
+        text-decoration: none;
+    }
+    
+    .search .search-btn {
+        display: block;
+        width: 100px;
+        height: 50px;
+        margin: 15px auto;
+        font-size: 17px;
+        color: white;
+        background-color: rgb(6 60 81 / 0.5);
+        border-radius: 10px;
+        border: none;
+        /* border: 1px solid red; */
+    }
+    
+    .search .search-btn:hover {
+        background-color: rgb(6 60 81 / 0.7);
+        font-size: 19px;
+        transition: 1.5s;
+    }
+
+    .primary {
+        display: flex;
+        position: relative;
+        top: 15%;
+        width: 90%;
+        height: 20vh;
+        margin: 0 auto;
+        /* border: 1px solid orange; */
+        border: unset;
+    }
+
+    .primary .block-weather,
+    .primary .block-loc-time,
+    .primary .block-temp {
+        flex: 1;
+        color: rgb(255, 255, 255);
+        /* border: 1px solid teal; */
+        border: unset;
+    }
+
+    .primary .block-weather p {
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 1rem;
+    }
+    
+    .primary .block-loc-time p {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    
+    .primary .block-temp p {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+    /* Primary display section end */
+}
