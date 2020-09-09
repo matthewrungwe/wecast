@@ -1,8 +1,13 @@
 const filesToCache = [
-    '/'
+    '/',
+    '/index.html',
+    '/app/css/main.css',
+    '/app/js/main.js',
+    '/assets/images/favicon.png',
+    '/assets/images/bg/dark-sunset-cloud-by-tom-barrett.webp'
 ];
 
-const staticCacheName = 'pages-cache-v2';
+const staticCacheName = 'pages-cache-v1';
 
 self.addEventListener('install', event => {
     console.log('Attempting to install service worker and cache static assets');
