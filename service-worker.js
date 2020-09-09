@@ -1,10 +1,10 @@
 const filesToCache = [
     '/',
-    '/index.html',
     '/app/css/main.css',
     '/app/js/main.js',
     '/assets/images/favicon.png',
-    '/assets/images/bg/dark-sunset-cloud-by-tom-barrett.webp'
+    '/assets/images/bg/dark-sunset-cloud-by-tom-barrett.webp',
+    '/assets/images/pwa/icon.png'
 ];
 
 const staticCacheName = 'pages-cache-v1';
