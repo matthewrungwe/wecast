@@ -6,7 +6,7 @@
         {
             "src": "./assets/images/pwa/icon.png",
             "type": "image/png",
-            "sizes": "400x400"
+            "sizes": "512x512"
         }
     ],
     "start_url": "/?source=pwa",
