@@ -4,6 +4,7 @@ let searchBtn = document.querySelector('.search-btn');
 let displayBlock = document.querySelector('#display');
 let displayName = document.querySelector('.name');
 let displayLatLon = document.querySelector('.lat-lon');
+let displayTime = document.querySelector('.time');
 let displayTemperature = document.querySelector('.temperature');
 let displayWeather = document.querySelector('.weather');
 let displayWeatherIcon = document.querySelector('.weather-icon');
@@ -51,6 +52,16 @@ const getWeatherIcon = (iconName) => {
         .catch(errorMsg);
 };
 
+const getTime = (unixTimestamp) => {
+    let milliseconds = unixTimestamp * 1000;
+
+    let date = new Date(milliseconds);
+
+    let dateString = date.toLocaleString();
+    
+    return dateString;
+}
+
 const isolateData = (response) => {
     console.log('In isolateData function.', response);
 
@@ -58,6 +69,7 @@ const isolateData = (response) => {
         name: response.name,
         country: response.sys.country,
         temp: response.main.temp,
+        time: response.dt,
         minTemp: response.main.temp_min,
         maxTemp: response.main.temp_max,
         weather: response.weather[0].description,
@@ -73,7 +85,8 @@ const displayData = (data) => {
     console.log('In displayData function.', data);
 
     displayName.innerHTML = data.name;
-    displayLatLon.innerHTML = `${data.lat}, ${data.lon}`;
+    displayLatLon.innerHTML = `[${data.lat}, ${data.lon}]`;
+    displayTime.innerHTML = getTime(data.time);
     displayTemperature.innerHTML = `${kelvinToCelcius(data.temp)}°C`;
     displayWeather.innerHTML = data.weather;
     displayMaxTemp.innerHTML = `${kelvinToCelcius(data.maxTemp)}°C`;
