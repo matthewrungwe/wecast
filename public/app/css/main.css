@@ -199,7 +199,7 @@ body{
 
 /* Secondary display section */
 .secondary {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     /* border: 1px solid white; */
 }
@@ -211,9 +211,10 @@ body{
 
 .secondary h2 {
     color: white;
-    font-size: 1.5rem;
-    /* border: 1px solid red; */
+    font-size: 2rem;
     margin-bottom: 30px;
+    padding: 5px
+    /* border: 1px solid red; */;
 }
 
 hr {
@@ -228,9 +229,10 @@ hr {
 
 .secondary .more-details li {
     color: white;
+    font-size: 1.3rem;
     height: 60px;
     margin: 10px 0;
-    margin-left: -30px;
+    margin-left: -2px;
     list-style-type: none;
     /* border: 1px solid green; */
 }
@@ -250,7 +252,7 @@ hr {
 @media screen and (max-width: 992px) {
     /* Header */
     .navbar-brand {
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: 600;
         /* color: gray; */
     }
@@ -270,13 +272,16 @@ hr {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        height: 20vh;
-        padding-bottom: 55%;
+        width: 100vw;
+        height: 100vh;
+        padding-bottom: 40%;
+        /* border: 1px solid red; */
     }
 
     .display-wrap #display-secondary {
-        height: 20vh;
+        height: 100vh;
         padding-bottom: 55%;
+        /* border: 1px solid red; */
     }
     /* Main end */
 
@@ -291,7 +296,7 @@ hr {
     
     .heading h1 {
         color: white;
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: 400;
         text-align: center;
     }
@@ -346,12 +351,11 @@ hr {
     .primary {
         display: flex;
         position: relative;
-        top: 15%;
+        top: 12%;
         width: 90%;
-        height: 20vh;
+        height: 30vh;
         margin: 0 auto;
         /* border: 1px solid orange; */
-        border: unset;
     }
 
     .primary .block-weather,
@@ -377,7 +381,7 @@ hr {
     
     .primary .block-temp p {
         text-align: center;
-        font-size: 2.5rem;
+        font-size: 3rem;
         font-weight: 600;
     }
     /* Primary display section end */
