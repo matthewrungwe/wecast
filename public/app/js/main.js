@@ -12,6 +12,8 @@ let displayMaxTemp = document.querySelector('.max-temp');
 let displayMinTemp = document.querySelector('.min-temp');
 let displayHumidity = document.querySelector('.humidity');
 let displayWind = document.querySelector('.wind');
+let displaySunrise = document.querySelector('.sunrise');
+let displaySunset = document.querySelector('.sunset');
 
 const kelvinToCelcius = (tempInKelvin) => {
     return Math.ceil(tempInKelvin - 273.15);
@@ -52,7 +54,7 @@ const getWeatherIcon = (iconName) => {
         .catch(errorMsg);
 };
 
-const getTime = (unixTimestamp) => {
+const getDate = (unixTimestamp) => {
     let milliseconds = unixTimestamp * 1000;
 
     let date = new Date(milliseconds);
@@ -60,7 +62,17 @@ const getTime = (unixTimestamp) => {
     let dateString = date.toLocaleString();
     
     return dateString;
-}
+};
+
+const getTime = (unixTimestamp) => {
+    let milliseconds = unixTimestamp * 1000;
+
+    let date = new Date(milliseconds);
+    
+    let timeSting = date.toLocaleTimeString();
+
+    return timeSting;
+};
 
 const isolateData = (response) => {
     console.log('In isolateData function.', response);
@@ -77,7 +89,9 @@ const isolateData = (response) => {
         windSpeed: response.wind.speed,
         humidity: response.main.humidity,
         lat: response.coord.lat,
-        lon: response.coord.lon
+        lon: response.coord.lon,
+        sunrise: response.sys.sunrise,
+        sunset: response.sys.sunset
     }
 };
 
@@ -86,15 +100,25 @@ const displayData = (data) => {
 
     displayName.innerHTML = data.name;
     displayLatLon.innerHTML = `[${data.lat}, ${data.lon}]`;
-    displayTime.innerHTML = getTime(data.time);
+    displayTime.innerHTML = getDate(data.time);
     displayTemperature.innerHTML = `${kelvinToCelcius(data.temp)}°C`;
     displayWeather.innerHTML = data.weather;
     displayMaxTemp.innerHTML = `${kelvinToCelcius(data.maxTemp)}°C`;
     displayMinTemp.innerHTML = `${kelvinToCelcius(data.minTemp)}°C`;
     displayHumidity.innerHTML = `${data.humidity}%`
     displayWind.innerHTML = `${convertToKmPerHr(data.windSpeed)}km/hr`;
+    displaySunrise.innerHTML = getTime(data.sunrise);
+    displaySunset.innerHTML = getTime(data.sunset);
 
     getWeatherIcon(data.weatherIcon);
+
+    // Api call for daily data
+    // fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.lat}&lon=${data.lon}&exclude=${'hourly'}&appid=${'f2f2829064e0603eca60536a2a902b48'}`)
+    //     .then(responseToJSON)
+    //     .then((data) => {
+    //         console.log(data);
+    //     })
+    //     .catch(errorMsg);
 };
 
 const search = () => {
