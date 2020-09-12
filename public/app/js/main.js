@@ -112,13 +112,17 @@ const displayData = (data) => {
 
     getWeatherIcon(data.weatherIcon);
 
-    // Api call for daily data
-    // fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.lat}&lon=${data.lon}&exclude=${'hourly'}&appid=${'f2f2829064e0603eca60536a2a902b48'}`)
-    //     .then(responseToJSON)
-    //     .then((data) => {
-    //         console.log(data);
-    //     })
-    //     .catch(errorMsg);
+    //Api call for daily data
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.lat}&lon=${data.lon}&exclude=${'hourly'}&appid=${'f2f2829064e0603eca60536a2a902b48'}`)
+        .then(responseToJSON)
+        .then((data) => {
+            console.log(data);
+        })
+        .catch(errorMsg);
+};
+
+const displayNextDays = (data) ={
+
 };
 
 const search = () => {
