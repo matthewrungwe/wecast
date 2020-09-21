@@ -15,6 +15,8 @@ let displayWind = document.querySelector('.wind');
 let displaySunrise = document.querySelector('.sunrise');
 let displaySunset = document.querySelector('.sunset');
 
+let tableBody = document.querySelector('tbody');
+
 const kelvinToCelcius = (tempInKelvin) => {
     return Math.ceil(tempInKelvin - 273.15);
 };
@@ -95,6 +97,25 @@ const isolateData = (response) => {
     }
 };
 
+const displayNextDays = (data) => {
+    console.log(data.daily);
+
+    let daily = data.daily;
+
+    for(let i = 1; i < daily.length; i++) {
+        let day = `
+        <tr>
+            <td>${getDate(daily[i].dt)}</td>
+            <td>${daily[i].weather[0].description}</td>
+            <td>${kelvinToCelcius(daily[i].temp.max)}°C</td>
+            <td>${kelvinToCelcius(daily[i].temp.min)}°C</td>
+        </tr>
+        `
+
+        tableBody.insertAdjacentHTML( 'beforeend', day);
+    }
+};
+
 const displayData = (data) => {
     console.log('In displayData function.', data);
 
@@ -115,14 +136,8 @@ const displayData = (data) => {
     //Api call for daily data
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.lat}&lon=${data.lon}&exclude=${'hourly'}&appid=${'f2f2829064e0603eca60536a2a902b48'}`)
         .then(responseToJSON)
-        .then((data) => {
-            console.log(data);
-        })
+        .then(displayNextDays)
         .catch(errorMsg);
-};
-
-const displayNextDays = (data) ={
-
 };
 
 const search = () => {
